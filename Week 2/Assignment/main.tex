@@ -1,0 +1,103 @@
+% ----------------------- TODO ---------------------------
+% Change per hand-in
+\newcommand{\NUMBER}{1} % exercise set number
+\newcommand{\EXERCISES}{5} % number of exercises
+
+\newcommand{\COURSECODE}{AP3252}
+\newcommand{\TITLE}{(S)TEM History}
+\newcommand{\STUDENTA}{Jeroen Sangers}
+\newcommand{\DEADLINE}{DEADLINE}
+\newcommand{\COURSENAME}{Electron Microscopy: Characterisation of the nanoscale}
+% ----------------------- TODO ---------------------------
+
+\documentclass[a4paper]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[british]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{pdflscape}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{polynom}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{forloop}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{fancybox}
+\usepackage{tikz}
+\usepackage{algpseudocode,algorithm,algorithmicx}
+\usepackage{fontspec}
+\setmainfont{Baskerville Light}[
+	BoldFont	= Baskerville Bold ,
+	ItalicFont	= Baskerville Light-Italic
+]
+
+
+% Algorithm command
+\newcommand*\Let[2]{\State #1 $\gets$ #2}
+
+% Matrix notation
+\newcommand{\matr}[1]{\mathbf{#1}}
+
+% Margins
+\geometry{a4paper,left=3cm, right=3cm, top=3cm, bottom=3cm}
+
+% Header and footer setup
+\pagestyle {fancy}
+%\fancyhead[L]{Tutor: \TUTOR}
+\fancyhead[L]{\TITLE}
+\fancyhead[C]{\STUDENTA}
+\fancyhead[R]{\today}
+
+\fancyfoot[L]{\COURSECODE}
+\fancyfoot[C]{\COURSENAME}
+\fancyfoot[R]{Page \thepage /\pageref*{LastPage}}
+
+% Formatting of "title"
+\def\header#1#2{
+  \begin{center}
+    {\Large Exercise set}\\
+    {(Deadline #2)}
+  \end{center}
+}
+
+\begin{document}
+
+\subsection*{Exercise 1}
+\subsubsection*{a)}
+The wavelengths $\lambda$ are plotted in both the classical and relativistic case.
+\subsubsection*{b)}
+The relativistic de Broglie wavelength for an electron at an energy of $200$ $keV$ is $\lambda_{200keV}=2.05$ $pm$.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\linewidth,keepaspectratio]{problem1.pdf}
+\end{figure}
+
+\newpage
+
+\subsection*{Exercise 2}
+For the largest magnification you want the objective to be as close to the focal point as possible.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth,keepaspectratio]{first.png}
+\end{figure}
+
+\newpage
+
+\subsection*{Exercise 3}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth,keepaspectratio]{last.png}
+\end{figure}
+
+For this setup we do not get a image after the lens but only a virtual image before the lens.
+\end{document}

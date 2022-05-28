@@ -1,0 +1,85 @@
+
+% ----------------------- TODO ---------------------------
+% Change per hand-in
+\newcommand{\NUMBER}{1} % exercise set number
+\newcommand{\EXERCISES}{5} % number of exercises
+
+\newcommand{\COURSECODE}{AP3252}
+\newcommand{\TITLE}{phase contrast transfer function}
+\newcommand{\STUDENTA}{Jeroen Sangers}
+\newcommand{\DEADLINE}{DEADLINE}
+\newcommand{\COURSENAME}{Electron Microscopy: Characterisation of the nanoscale}
+% ----------------------- TODO ---------------------------
+
+\documentclass[a4paper]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[british]{babel}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{pdflscape}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{polynom}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{forloop}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{fancybox}
+\usepackage{tikz}
+\usepackage{algpseudocode,algorithm,algorithmicx}
+\usepackage{fontspec}
+
+
+\setmainfont{Baskerville Light}[
+	BoldFont	= Baskerville Bold ,
+	ItalicFont	= Baskerville Light-Italic
+]
+
+
+% Algorithm command
+\newcommand*\Let[2]{\State #1 $\gets$ #2}
+
+% Matrix notation
+\newcommand{\matr}[1]{\mathbf{#1}}
+
+% Margins
+\geometry{a4paper,left=3cm, right=3cm, top=3cm, bottom=3cm}
+
+% Header and footer setup
+\pagestyle {fancy}
+%\fancyhead[L]{Tutor: \TUTOR}
+\fancyhead[L]{\TITLE}
+\fancyhead[C]{\STUDENTA}
+\fancyhead[R]{\today}
+
+\fancyfoot[L]{\COURSECODE}
+\fancyfoot[C]{\COURSENAME}
+\fancyfoot[R]{Page \thepage /\pageref*{LastPage}}
+
+% Formatting of "title"
+\def\header#1#2{
+  \begin{center}
+    {\Large Exercise set}\\
+    {(Deadline #2)}
+  \end{center}
+}
+
+\begin{document}
+\subsubsection*{Exercise 1}
+\begin{enumerate}
+  \item For high $u$ the envelope function tends to zero, as such the phase correlation transfer function also tends to zero regardless of $\Delta f$.
+  \item A zero crossing means that there is no phase contrast at these frequencies, such that there is no phase contrast image formed at these frequencies.
+  \item A defocus of zero ($\Delta f = 0$) would have no zero crossing thus allowing for the capture of information at all frequencies. The magnitude of phase contrast is low but with a CCD camera this should be no issue.
+  \item Increasing the tension of the electrons increases the with of the envelope function, allowing for a wider range of frequencies to be recorded. Changing $C_s$ to be larger increases the amount of zero crossings at high-$u$
+  \item Something like $\Delta f = -86$ would be best since it almost has a zero-crossing at $u=3$ $[nm^{-1}]$ such that there is still information here but all other zero-crossings are pushed further to the high-$u$ regime. This way there is good phase contrast up to $u \approxeq 5$ $nm^{-1}$.
+\end{enumerate}
+\end{document}

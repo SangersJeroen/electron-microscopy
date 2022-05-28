@@ -1,0 +1,101 @@
+
+% ----------------------- TODO ---------------------------
+% Change per hand-in
+\newcommand{\NUMBER}{1} % exercise set number
+\newcommand{\EXERCISES}{5} % number of exercises
+
+\newcommand{\COURSECODE}{AP3252}
+\newcommand{\TITLE}{Machine Learning for TEM}
+\newcommand{\STUDENTA}{Jeroen Sangers}
+\newcommand{\DEADLINE}{DEADLINE}
+\newcommand{\COURSENAME}{Electron Microscopy: Characterisation of the nanoscale}
+% ----------------------- TODO ---------------------------
+
+\documentclass[a4paper]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[british]{babel}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{pdflscape}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{polynom}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{forloop}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{fancybox}
+\usepackage{tikz}
+\usepackage{algpseudocode,algorithm,algorithmicx}
+\usepackage{fontspec}
+
+
+\setmainfont{Baskerville Light}[
+	BoldFont	= Baskerville Bold ,
+	ItalicFont	= Baskerville Light-Italic
+]
+
+\setmonofont{Roboto Mono Light}[
+  Scale=MatchLowercase
+]
+
+
+
+% Algorithm command
+\newcommand*\Let[2]{\State #1 $\gets$ #2}
+
+% Matrix notation
+\newcommand{\matr}[1]{\mathbf{#1}}
+
+% Margins
+\geometry{a4paper,left=3cm, right=3cm, top=3cm, bottom=3cm}
+
+% Header and footer setup
+\pagestyle {fancy}
+%\fancyhead[L]{Tutor: \TUTOR}
+\fancyhead[L]{\TITLE}
+\fancyhead[C]{\STUDENTA}
+\fancyhead[R]{\today}
+
+\fancyfoot[L]{\COURSECODE}
+\fancyfoot[C]{\COURSENAME}
+\fancyfoot[R]{Page \thepage /\pageref*{LastPage}}
+
+% Formatting of "title"
+\def\header#1#2{
+  \begin{center}
+    {\Large Exercise set}\\
+    {(Deadline #2)}
+  \end{center}
+}
+
+\begin{document}
+\subsubsection*{The Paper}
+\textbf{Charting the low-loss region in electron energy loss spectroscopy with
+machine learning}\\
+DOI: \href{https://doi.org/10.1016/j.ultramic.2021.113202}{\texttt{10.1016/j.ultramic.2021.113202}}\\
+In this paper the authors use machine learning algorithms originally developed for particle physics to subtract the zero-loss peak from the useful low-loss region in an electron energy-loss spectroscopy spectrum. This new method allows the authors to have an assumption- and bias-free method for unmasking the low-loss regime with known uncertainty propagation.\\
+
+\subsubsection*{Background}
+In the paper the authors aim to study the low-loss region of a tungsten-di-sulfide nanostructure, the same 2H/3R poly type nanoflower as seen in the Z-contrast imaging segment of the lecture on TEM sensors, by employing their own developed machine learning method. The employ the machine learning algorithm to subtract the intensity profile of the zero-loss peak from the overall electron energy-loss spectroscopy spectra, (EELS)-spectra. Electron energy-loss spectroscopy is a transmission electron microscopy technique by which the electronic properties of an electron transparent material are probed by measuring the energy-loss of scattered electrons from the illuminating beam of the microscope. The impinging electrons either lose their energy inelastically by interacting with the electrons in the specimen lattice or pass through the sample without interacting or interacting elastically with the atoms cores and thus contributing to the zero-loss peak (ZLP). The energy-loss is probed by using a magnetic prism positioned post-column, this prism spreads the electrons based on their velocity which in turn is determined by the beam voltage and electron-loss. After the prisms a selecting slit allows only electrons with a certain range of energy-losses through which are then imaged by an imaging device.\\
+
+\subsubsection*{Neural network architecture}
+The goal of the neural network is the subtraction of the ZLP from the overall EELS spectrum, to this end the ZLP needs to provide an estimate of the intensity of the inelastically scattered electrons. With designing this neural network the authors employed a Neural Network Parton Distribution Functions (NNPDF) approach \footnote{ J. Rojo, Machine learning tools for global PDF fits, in: 13th Conference on Quark Confinement and the Hadron Spectrum, Vol. 9, 2018, \href{http://arxiv.org/abs/1809.04392}{http://arxiv.org/abs/1809.04392}} which was previously pioneered for use in the field of high-energy particle physics. This approach is based on a combination of three main components, the use of neural networks as unbiased interpolants, the Monte Carlo method to estimate and propagate uncertainties, and, genetic algorithms minimizations for the training of the neural networks to avoid over-fitting.
+
+The neural network employed was designed to estimate the intensity of inelastic scattering based on the machine parameters at the time of the experiment. To this end the first layer of neurons serve as inputs of these parameters to the neural network. The intensity of the zero-loss peak (ZLP) depends on parameters, such as beam energy, exposure time, energy loss, etc, therefore these parameters are supplied to the first layer. The neural network is a feed forward network with three more layers after the first and a single end neuron outputs an intensity level for the given input parameters. The second and third layer a made up of non-linear sigmoid activation neurons with ten and fifteen neurons for the second and third layer respectively, the fourth layer consists of five ReLU neurons. The non-linear activations of the second and third layer allow the neural network to learn the non-linearities in the dependence of the ZLP intensity on machine parameters while the ReLU neurons in the final layer ensure that the system is positive-definite.
+
+\subsubsection*{Uncertainty propagation}
+On of the key aspects with the approach undertaken in the paper is that unlike other methods of removing the zero-loss peak (ZLP) the uncertainties of the intensities of the ZLP that are subtracted are known, allowing the estimation of error in the subtraction is a more transparent and trustworthy approach.
+To estimate the uncertainties and propagate them the authors use the Monte Carlo replica method. The idea behind the method is that for gathered testing data there is still underlying information, such as, central values, uncertainties, and, correlations. These are used to construct a sampling of the probability distribution in the space of possible data. This data can then be fed into the trained neural network to map the space of possible data to a space of possible ZLP models.
+
+\subsubsection*{Training strategy}
+\end{document}

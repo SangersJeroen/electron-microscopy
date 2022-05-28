@@ -1,0 +1,97 @@
+% ----------------------- TODO ---------------------------
+% Change per hand-in
+\newcommand{\NUMBER}{1} % exercise set number
+\newcommand{\EXERCISES}{5} % number of exercises
+
+\newcommand{\COURSECODE}{AP3252}
+\newcommand{\TITLE}{NEMI / LP-EM Summary}
+\newcommand{\STUDENTA}{Jeroen Sangers}
+\newcommand{\DEADLINE}{DEADLINE}
+\newcommand{\COURSENAME}{Electron Microscopy: Characterisation of the nanoscale}
+% ----------------------- TODO ---------------------------
+
+\documentclass[a4paper]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[british]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{pdflscape}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{polynom}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{forloop}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{fancybox}
+\usepackage{tikz}
+\usepackage{algpseudocode,algorithm,algorithmicx}
+\usepackage{fontspec}
+\setmainfont{Baskerville Light}[
+	BoldFont	= Baskerville Bold ,
+	ItalicFont	= Baskerville Light-Italic
+]
+
+
+% Algorithm command
+\newcommand*\Let[2]{\State #1 $\gets$ #2}
+
+% Matrix notation
+\newcommand{\matr}[1]{\mathbf{#1}}
+
+% Margins
+\geometry{a4paper,left=3cm, right=3cm, top=3cm, bottom=3cm}
+
+% Header and footer setup
+\pagestyle {fancy}
+%\fancyhead[L]{Tutor: \TUTOR}
+\fancyhead[L]{\TITLE}
+\fancyhead[C]{\STUDENTA}
+\fancyhead[R]{\today}
+
+\fancyfoot[L]{\COURSECODE}
+\fancyfoot[C]{\COURSENAME}
+\fancyfoot[R]{Page \thepage /\pageref*{LastPage}}
+
+% Formatting of "title"
+\def\header#1#2{
+  \begin{center}
+    {\Large Exercise set}\\
+    {(Deadline #2)}
+  \end{center}
+}
+
+\begin{document}
+\subsubsection*{Liquid phase electron microscopy}
+Liquid phase electron microscopy is a technique that uses a transmission electron microscopy in imaging mode to look at a sample submersed or dissolved in a liquid. This liquid is held between two plates made of a relatively electron-transparent material, such as silicon-nitride or graphene, clamped in the vacuum chamber of the TEM. Where graphene is often used since this material both allows for beam-window effects to be neglected and its use as a radical quencher, meaning it reduces the radiation damage imposed on the sample by free radicals. Certain LP-EM setups also allow for the circulation of the liquid surrounding the sample, enabling measurements on the effect of the properties of the liquid on the sample.\\
+Due to the sample being enclosed by a fluid it is possible to also image materials whose properties or structures would change if it were in the vacuum chamber of a normal TEM. These samples are for example biological samples such as tissue or proteins but also geological samples.
+In LP-EM it is also possible to measure the properties of a sample which itself is a liquid, since the sample liquid is held in place in between two electron transparent plates it can be placed in a vacuum chamber. In a normal TEM a liquid would quickly evaporate in the vacuum. Another use of LP-EM is the imaging of small free structures in suspension in the liquid allowing for the analysis of movement in a non-bulk liquid environment, showing entrapment, crowding and confinement.
+
+\subsubsection*{In situ transmission electron microscopy and spectroscopy
+studies of interfaces in Li ion batteries: Challenges and
+opportunities}
+{\color{gray}\footnotesize DOI: 10.1557/JMR.2010.0198}\\
+In this paper the authors have observed the structural evolution of a lithium-ion battery during operation by use of a fabricated miniature lithium-ion battery made using a single nanowire and an ionic liquid electrolyte. The authors then studied the structure and composition of the nanowire-electrolyte interface by using TEM imaging, electron diffraction and electron energy-loss spectroscopy techniques.\\
+Looking at the solid lithium-ion interfaces ex-situ the authors saw high-density dislocation at the lithium-ion and electrode interface. The authors wanted to find out how these dislocations are generated and what effect these dislocations have on the operation of the lithium-ion battery. To answer these questions the authors wanted to look at the battery in operation and observe the dynamical evolution of the lithium-ion and electrolyte interface. By use of a liquid phase electrolyte that partially submerses a LiCoO$_2$ cathode but held in a glass tube the authors were able to load and unload the electrochemical cell in-situ and record over time the potential between the anode and cathode and also the diffraction pattern of the SnO$_2$ anode. The LP-EM technique allowed the authors to see the change in chemical decomposition of nanowire anode from SnO$_2$ to a mixture of Li$_x$Sn$_y$ and Li$_z$O by EELS compositional analysis during charging.
+
+\subsubsection*{In situ study of nucleation and growth dynamics of Au nanoparticles on MoS$_2$ nanoflakes}
+{\color{gray}\footnotesize DOI:10.1039/C8NR03519A}\\
+The authors of the article aim to study the growth of gold nanoparticles on a MoS$_2$ nanoflake arguing that recent advances in large scale synthesis of ultrathin 2D materials like graphene and transition-metal dichalcogenides (MoS$_2$) have made them ideal candidates for growing novel composite nanostructures for the application of high performance catalytic and electronic devices.\\
+The authors employ LP-EM to study the dynamic reaction process of the Au nanoparticles in real time and at a high spatial resolution. They achieved this by designing a liquid cell consisting of silicon chips with silicon nitride viewing windows such that they can circulate a liquid without influencing the vacuum of the (S)TEM chamber. The experiment was then ran by placing a MoS$_2$ nanoflake with pre-applied small Au nanoparticles in the fluid cell and flowing a dilute AuCl$_3$ solution through the cell. The free Au$^{3+}$ ions then react with the already existing nanoparticles to grow them. During the reaction the authors captured videos with the (S)TEM to later calculate the size and the growth rate of the Au nanoparticles.\\
+Due to the LP-EM technique the authors were able to better understand the synthesis of gold nanoparticles at different positions on the nanoflake and the rate at which the nanoparticles grew which they found to be in between the reaction and diffusion limit. The authors would not have been able to get such accurate real-time data if the particles were grown ex-situ and then imaged with the (S)TEM.
+
+\subsubsection*{Tunability of interactions between the core and shell in rattle-type particles studied with liquid-cell electron microscopy}
+{\color{gray}\footnotesize DOI:10.1021/acsnano.1c03140}\\
+In this paper the authors wish to study the dynamics of yolk-shell or rattle-type particles in-situ in water of which they can control parameters like salinity and pH. The authors chose water as the liquid in the fluid cell since the rattle-type particles are promising in catalysis and biomedicine for drug delivery. The particles were able to be studied since they are unable to leave the shell but within the cell their Brownian motion is not inhibited by the water in the fluid cell. Due to the liquid phase electron microscopy set up the author were able to change the salinity of the water gradually in the fluid cell and record the particles as their confining potential changed, this way the authors were able to create probability maps of the core within the shell. Without a liquid phase electron microscopy setup this would not have been possible since the cores of the rattle-type particles would not have exhibited any Brownian motion.
+
+
+
+\end{document}
